@@ -1,0 +1,56 @@
+					iptv服务器以及安全
+最早的两台服务器
+	123.134.94.50    账号：bimlaiwuepg     密码：hsh))HBE!Uh*
+	sudo ssh bimlaiwuepg@123.134.66.50
+	123.134.94.51     账号： bimlaiwuupg   密码：LN\/Yg*@Ggg
+	sudo ssh bimlaiwuupg@123.134.66.51
+
+ 济南的四台服务器
+| 				address 		124.132.254.69  
+| 				mask			255.255.255.192
+| 				gateway			124.132.254.126
+|   bimepg     	DNS				
+|   			user			bimepg
+|   			password		Qz*8!Bn#h
+__________________________________________________
+| 					address 		124.132.254.72  
+| 					mask			255.255.255.192
+| 					gateway			124.132.254.126
+|   bimlog     		DNS				
+|   				user			bimlog
+|   				password		Qz*8!Bn#h
+__________________________________________________
+| 					address 		124.132.254.70 
+| 					mask			255.255.255.192
+| 					gateway			124.132.254.126
+|   bimupgrade     	DNS				
+|   				user			bimupgrade
+|   				password		Qz*8!Bn#h
+__________________________________________________
+| 				address 		124.132.254.71 
+| 				mask			255.255.255.192
+| 				gateway			124.132.254.126
+|   bimdb     	DNS				
+|   			user			bimdb
+|   			password		Qz*8!Bn#h
+__________________________________________________
+以后所有的服务器都只是用下面的端口开发 ， 尤其不能使用8089端口，这个端口是联通使用的
+9501 － 9799端口开发
+开发环境 
+  jdk 1.8
+  tomcat 7.0
+  mysql  5.7.13
+安全防护根据辽宁服务器演示文档.doc的规范来执行
+
+现在开始进行服务器的连接
+sudo ssh bimepg@124.132.254.69
+	Qz*8!Bn#h
+sudo ssh bimlog@124.132.254.72
+sudo ssh bimupgrade@124.132.254.70
+sudo ssh bimdb@124.132.254.71
+
+
+
+
+
+
