@@ -49,8 +49,46 @@ sudo ssh bimlog@124.132.254.72
 sudo ssh bimupgrade@124.132.254.70
 sudo ssh bimdb@124.132.254.71
 
+scp /Users/admin/Downloads/jdk-8u161-linux-x64.tar.gz bimepg@124.132.254.69:/home/bimepg
+scp /Users/admin/Downloads/jdk-8u161-linux-x64.tar.gz bimlog@124.132.254.72:/home/bimlog
+scp /Users/admin/Downloads/jdk-8u161-linux-x64.tar.gz bimupgrade@124.132.254.70:/home/bimupgrade
+scp /Users/admin/Downloads/jdk-8u161-linux-x64.tar.gz bimdb@124.132.254.71:/home/bimdb
+
+scp /Users/admin/Downloads/mysql-5.6.39-linux-glibc2.12-x86_64.tar.gz bimepg@124.132.254.69:/home/bimepg
+scp /Users/admin/Downloads/mysql-5.6.39-linux-glibc2.12-x86_64.tar.gz bimlog@124.132.254.72:/home/bimlog
+scp /Users/admin/Downloads/mysql-5.6.39-linux-glibc2.12-x86_64.tar.gz bimupgrade@124.132.254.70:/home/bimupgrade
+scp /Users/admin/Downloads/mysql-5.6.39-linux-glibc2.12-x86_64.tar.gz bimdb@124.132.254.71:/home/bimdb
+
+scp /Users/admin/Downloads/apache-tomcat-7.0.82.zip bimepg@124.132.254.69:/home/bimepg
+	http://124.132.254.69:9501/
+scp /Users/admin/Downloads/apache-tomcat-7.0.82.zip bimlog@124.132.254.72:/home/bimlog
+	http://124.132.254.72:9501/
+scp /Users/admin/Downloads/apache-tomcat-7.0.82.zip bimupgrade@124.132.254.70:/home/bimupgrade
+	http://124.132.254.70:9501/
+scp /Users/admin/Downloads/apache-tomcat-7.0.82.zip bimdb@124.132.254.71:/home/bimdb
+	http://124.132.254.71:9501/
+
+/usr/local/tools/jdk1.8.0_161
 
 
 
+sudo vim /etc/profile
+
+JAVA_HOME=/usr/local/tools/jdk1.8.0_161
+CLASSPATH=.:$JAVA_HOME/lib.tools.jar
+PATH=$JAVA_HOME/bin:$PATH
+export JAVA_HOME CLASSPATH PATH
+
+export JAVA_HOME=/usr/local/tools/jdk1.8.0_161
+
+export JRE_HOME=/usr/local/tools/jdk1.8.0_161/jre
+
+sudo netstat -tap | grep mysql
+
+
+create database iptv;
+insert into mysql.user(Host,User,Password) values("%","iptvone",password("iptv21345"));
+grant all privileges on mysql.* to iptvone@'%' identified by 'iptv21345';
+grant all privileges on iptv.* to iptvone@localhost identified by 'iptv21345';
 
 
