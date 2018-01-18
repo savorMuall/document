@@ -44,7 +44,7 @@ __________________________________________________
 
 现在开始进行服务器的连接
 sudo ssh bimepg@124.132.254.69
-	Qz*8!Bn#h
+	Qz*8!Bn#home
 sudo ssh bimlog@124.132.254.72
 sudo ssh bimupgrade@124.132.254.70
 sudo ssh bimdb@124.132.254.71
@@ -89,6 +89,37 @@ sudo netstat -tap | grep mysql
 create database iptv;
 insert into mysql.user(Host,User,Password) values("%","iptvone",password("iptv21345"));
 grant all privileges on mysql.* to iptvone@'%' identified by 'iptv21345';
-grant all privileges on iptv.* to iptvone@localhost identified by 'iptv21345';
+grant all privileges on iptv.* to iptvone@'%' identified by 'iptv21345';
 
+grant all privileges on *.* to 'iptvone' @'%' identified by 'iptv21345' with grant option;
 
+GRANT ALL PRIVILEGES ON *.* TO 'iptvone' @'%' identified BY iptv21345' WITH GRANT OPTION;
+
+mysql重启
+sudo /usr/sbin/mysqld restart
+
+sudo apt-get autoremove --purge mysql-server-5.5.44-0ubuntu0.14.04.1
+sudo apt-get remove mysql-server
+sudo apt-get autoremove mysql-server
+sudo apt-get remove mysql-common (非常重要)
+
+69服务器
+  mysql
+   root 用户 密码 iptv123
+/usr/share/doc/mysql-server-5.5/README.Debian
+
+dpkg -l|grep ^rc
+
+http://blog.csdn.net/lllliulin/article/details/51520203
+
+/usr/share/doc/mysql-server-5.5
+
+scp /Users/admin/Downloads/mysql-server_5.6.39-1ubuntu14.04_amd64.deb-bundle.tar bimepg@124.132.254.69:/home/bimepg
+
+ * mysql-server-core-5.5
+ * mariadb-server-core-5.5
+ * mysql-server-core-5.6
+ * percona-xtradb-cluster-server-5.5
+Try: sudo apt-get install <selected package>
+
+sudo apt-get install percona-xtradb-cluster-server-5.5
